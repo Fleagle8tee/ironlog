@@ -744,6 +744,7 @@ canvas.chart{width:100%!important;height:130px!important;}
 <div class="toast" id="toast"></div>
 
 <script>
+const REP_CEILING=12,STALL_AFTER=3,SWAP_AFTER=6,STALL_WINDOW=8;
 // ══ MUSCLE MAP ══
 const MUSCLE_MAP={
   'bench press':'chest','incline bench':'chest','decline bench':'chest','chest press':'chest','chest fly':'chest',
@@ -1323,7 +1324,6 @@ function buildProgressionHints(){
 
 // Double progression: hit REP_CEILING on every top-weight set -> add load. Best score hasn't
 // improved for STALL_AFTER sessions -> deload, and after SWAP_AFTER -> swap the exercise.
-const REP_CEILING=12,STALL_AFTER=3,SWAP_AFTER=6,STALL_WINDOW=8;
 function adviceFor(exLower){
   const h=[];
   [...DB.sessions].reverse().forEach(s=>{
